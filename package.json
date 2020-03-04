@@ -1,28 +1,21 @@
 {
-  "name": "website",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.6.3",
-    "dotenv": "^6.1.0",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
-  },
+  "name": "simple-calculator-service",
+  "version": "1.0.0",
+  "main": "service.js",
   "scripts": {
-    "start:dev": "sh -ac '. ./.env.development; react-scripts start';",
-    "build:dev": "sh -ac '. ./.env.development; react-scripts build';",
-    "build:stage": "sh -ac '. ./.env.staging; react-scripts build';",
-    "build:prod": "sh -ac '. ./.env.production; react-scripts build';",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node service.js",
+    "test": "./node_modules/nyc/bin/nyc.js --reporter=lcov ./node_modules/mocha/bin/mocha"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "numeral": "^2.0.0",
+    "express": "^4.13.3",
+    "redis": "^2.8.0",
+    "express-redis-cache": "^0.1.0"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
-}
+  "devDependencies": {
+    "mocha": "^4.0.0",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "nyc": "^11.2.0"
+  },
+  "private": "tr
